@@ -53,13 +53,13 @@ clear-data: ## Clear all sample data
 	python manage.py create_sample_data --clear-existing
 
 # Development servers
-run: run-django ## Run Django development server (default)
+run: run-fastapi ## Run Django development server (default)
 
 run-django: ## Run Django development server
 	python manage.py runserver 0.0.0.0:8000
 
 run-fastapi: ## Run FastAPI service only
-	cd ai_service && uvicorn main:app --host 0.0.0.0 --port 5050 --reload
+	uvicorn ai_service.main:app --host 0.0.0.0 --port 5050 --reload
 
 run-dev: ## Run dev environment server
 	uvicorn main.asgi:application --host 0.0.0.0 --port 8000 --reload --env-file .env.dev

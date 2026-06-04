@@ -24,7 +24,7 @@ static
 
 # Environment
 .env
-.env.*
+.env.dev
 venv/
 ENV/
 env/
